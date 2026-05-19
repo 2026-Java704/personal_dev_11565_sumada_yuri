@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
+<head>
+	<meta charset="UTF-8">
+	<title>ログイン</title>
+</head>
+
+<body>
+	<header>
+		<h1>体幹を鍛えよう！</h1>
+	</header>
+	<main>
+		<form action="/login" method="post">
+			<input type="text" name="name" placeholder="名前"><br>
+			<input type="text" name="password" placeholder="パスワード"><br>
+			<button>ログイン</button>
+		</form>
+	</main>
 </body>
+
 </html>
