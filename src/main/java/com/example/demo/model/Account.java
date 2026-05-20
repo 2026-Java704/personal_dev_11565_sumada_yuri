@@ -7,24 +7,12 @@ import org.springframework.web.context.annotation.SessionScope;
 @SessionScope
 public class Account {
 
-	private Integer id;
-
 	private String name;
+	private String password;
 
-	public Account() {
-	}
-
-	public Account(Integer id, String name) {
-		this.id = id;
+	public Account(String name, String password) {
 		this.name = name;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+		this.password = password;
 	}
 
 	public String getName() {
@@ -34,4 +22,13 @@ public class Account {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

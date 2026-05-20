@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
-public class TaskController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class TaskController {
 }

@@ -8,11 +8,14 @@
 
 <body>
 	<header>
-		<h1>新規会員登録</h1>
+		<h1>新規登録フォーム</h1>
 	</header>
 	<main>
 		<h3>お客様情報</h3>
-		<form action="/account" method="post">
+		<form action="/users/add" method="post">
+			<ul th:if="${errorList}" class="error">
+						<li th:each="error:${errorList}" th:text="${error}"></li>
+					</ul>
 			<table border="1">
 				<tr>
 					<th>お名前</th>
@@ -28,7 +31,7 @@
 				</tr>
 
 			</table>
-			<button>登録</button>
+			<button type="submit">新規登録</button>
 		</form>
 	</main>
 	<hr>

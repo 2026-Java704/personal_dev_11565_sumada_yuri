@@ -7,24 +7,32 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	private String password;
-	private Integer age;
-	private Integer gender;
-	private Double weight;
+	//	private Integer age;
+	//	private Integer gender;
+	//	private Double weight;
 
-	public User(Integer id, String name, String password, Integer age, Integer gender, Double weight) {
+	public User() {
+	}
+
+	public User(Integer id, String name, String password) {
 		this.id = id;
 		this.name = name;
 		this.password = password;
-		this.age = age;
-		this.gender = gender;
-		this.weight = weight;
+		//		this.age = age;
+		//		this.gender = gender;
+		//		this.weight = weight;
+	}
+
+	public User(String name, String password) {
+		this.name = name;
+		this.password = password;
 	}
 
 	public Integer getId() {
@@ -50,29 +58,29 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	public Integer getGender() {
-		return gender;
-	}
-
-	public void setGender(Integer gender) {
-		this.gender = gender;
-	}
-
-	public Double getWeight() {
-		return weight;
-	}
-
-	public void setWeight(Double weight) {
-		this.weight = weight;
-	}
+	//
+	//	public Integer getAge() {
+	//		return age;
+	//	}
+	//
+	//	public void setAge(Integer age) {
+	//		this.age = age;
+	//	}
+	//
+	//	public Integer getGender() {
+	//		return gender;
+	//	}
+	//
+	//	public void setGender(Integer gender) {
+	//		this.gender = gender;
+	//	}
+	//
+	//	public Double getWeight() {
+	//		return weight;
+	//	}
+	//
+	//	public void setWeight(Double weight) {
+	//		this.weight = weight;
+	//	}
 
 }

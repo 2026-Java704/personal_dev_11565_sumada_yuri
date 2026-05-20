@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import jakarta.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -8,33 +10,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.PersonalDev11565SumadaYuriApplication;
-import com.example.demo.model.Account;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.entity.User;
+import com.example.demo.repository.UsersRepository;
 
 @Controller
 public class UserController {
 
-	private final PersonalDev11565SumadaYuriApplication personalDev11565SumadaYuriApplication;
+	//	private final Account account;
 	private final HttpSession session;
-	private final Account account;
-	private final UserRepository userRepository;
+	private final UsersRepository usersRepository;
 
 	public UserController(
+			//			Account account,
 			HttpSession session,
-			Account account,
-			UserRepository userRepository,
-			PersonalDev11565SumadaYuriApplication personalDev11565SumadaYuriApplication) {
+			UsersRepository usersRepository) {
+		//		this.account = account;
 		this.session = session;
-		this.account = account;
-		this.userRepository = userRepository;
-		this.personalDev11565SumadaYuriApplication = personalDev11565SumadaYuriApplication;
+		this.usersRepository = usersRepository;
 	}
 
 	@GetMapping({ "/", "/login" })
 	public String index() {
 		session.invalidate();
-
 		return "login";
 	}
 
@@ -43,24 +40,32 @@ public class UserController {
 			@RequestParam String name,
 			@RequestParam String password,
 			Model model) {
-		return "redirect:/";
+		List<User> userList = usersRepository.findBynameAndPassword(name, password);
+		if (userList.size() == 0) {
+			model.addAttribute("message", "名前とパスワードが一致しませんでした");
+			return "login";
+		}
+		if (name == null || password == null) {
+			model.addAttribute("message", "入力してください");
+			return "login";
+
+		}
+		return "burnCalorie";
 	}
 
-	@GetMapping("//users/new")
+	@GetMapping("/users/add")
 	public String create() {
 		return "accountForm";
 	}
 
 	@PostMapping("/users/add")
-	public String add(
+	public String create(
 			@RequestParam String name,
-			@RequestParam String password,
-			Model model) {
-		return "redirect:/";
+			@RequestParam String password) {
+		User user = new User(name, password);
+		usersRepository.save(user);
+
+		return "redirect:/login";
 	}
 
-	@PostMapping("/logout")
-	public String logout() {
-		return "redirect:/";
-	}
 }
