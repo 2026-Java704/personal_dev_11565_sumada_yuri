@@ -9,30 +9,34 @@
 		<h1>体幹を鍛えよう！</h1>
 	</header>
 	<main>
-		[[${name}]]さん、こんにちは
+		[[${@account.name}]]さん、こんにちは
 		<table border="1">
-			<tr>
-				<th>日付</th>
-				<th>種目</th>
-				<th>時間</th>
-				<th>体重</th>
-			</tr>
-			
-			<tr>
-				<td>
-					<input type="text"
-				</td>
-				<td>
-					
-				</td>
-				<td>
-					
-				</td>
-				<td>
-					
-				</td>
-			</tr>
-		</table>
+					<tr>
+						<th>日付</th>
+						<th>種目</th>
+						<th>時間</th>
+						<th>体重</th>
+					</tr>
+					<tr>
+						<td>
+							<input type="date" name="releaseDate" th:value="${date}">
+						</td>
+						
+						<td>
+							<input type="text" name="name" th:value="${name}">
+						</td>
+						
+						<td>
+							<input type="text" name="time" th:value="${time}">分
+						</td>
+						
+						<td>
+							<input type="text" name="weight" th:value="${weight}">kg
+						</td>
+						
+					</tr>
+				</table>
+		
 		<button>登録</button><br>
 		<a href="/">過去の記録を見る</a>
 		</main>
