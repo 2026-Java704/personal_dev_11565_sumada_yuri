@@ -31,7 +31,7 @@ public class UserController {
 	}
 
 	//ログイン画面表示
-	@GetMapping({ "/", "/login" })
+	@GetMapping({ "/", "/login", "logout" })
 	public String index() {
 		session.invalidate();
 		return "login";
@@ -54,7 +54,7 @@ public class UserController {
 
 		}
 		account.setName(name);
-		return "burnCalorie";
+		return "addRecords";
 	}
 
 	//新規登録画面表示
@@ -62,6 +62,7 @@ public class UserController {
 	public String create() {
 		return "accountForm";
 	}
+
 	//新規登録画面処理
 	@PostMapping("/users/add")
 	public String create(

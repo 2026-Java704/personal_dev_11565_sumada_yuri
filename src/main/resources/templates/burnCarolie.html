@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>カロリー出力　スライド4</title>
+</head>
+
+<body>
+	<header>
+		<h1>体幹を鍛えよう！</h1>
+	</header>
+	<main>
+		[[${@account.name}]]さんの消費カロリーは、約？？？？？カロリーです！<br>
+		<table border="1">
+			<tr>
+				<th>日付</th>
+				<th>種目</th>
+				<th>時間</th>
+				<th>体重</th>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="releaseDate" th:value="${date}">
+				</td>
+
+				<td>
+					<input type="text" name="name" th:value="${name}">
+				</td>
+
+				<td>
+					<input type="text" name="time" th:value="${time}">分
+				</td>
+
+				<td>
+					<input type="text" name="weight" th:value="${weight}">kg
+				</td>
+
+			</tr>
+		</table>
+		<a href="/past">過去の記録を見る</a>
+	</main>
+
+</body>
+
+</html>
