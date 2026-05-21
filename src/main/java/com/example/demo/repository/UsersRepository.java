@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.entity.User;
+import com.example.demo.entity.Users;
 
-public interface UsersRepository extends JpaRepository<User, Integer> {
+public interface UsersRepository extends JpaRepository<Users, Integer> {
+	List<Users> findByNameAndPassword(String name, String password);
 
-	List<User> findBynameAndPassword(String name, String password);
-
+	boolean existsByName(String name);
 }
