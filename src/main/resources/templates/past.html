@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>過去の記録</title>
+	<meta charset="UTF-8">
+	<title>過去の記録</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
+
 <body>
 	<header>
 		<h1>体幹を鍛えよう！</h1>
+		<span th:text="${@account.name}+' さんがログイン中'"></span>
 	</header>
 
 	<main>
@@ -19,6 +23,9 @@
 				<th>時間</th>
 				<th>体重</th>
 				<th>消費カロリー</th>
+				<th>更新</th>
+				<th>削除</th>
+
 			</tr>
 			<tr th:each="record : ${records}">
 				<td th:text="${record.date}"></td>
@@ -30,6 +37,16 @@
 				<td th:text="${record.time + ' 分'}"></td>
 				<td th:text="${record.weight + ' kg'}"></td>
 				<td th:text="${'約 ' + record.burnCalorie + ' キロカロリー'}"></td>
+				<td>
+					<form th:action="@{/past/{pastId}/edit(pastId=${record.id})}" method="get">
+						<button>更新</button>
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/past/{pastId}/delete(pastId=${record.id})}" method="post">
+						<button>削除</button>
+					</form>
+				</td>
 			</tr>
 		</table>
 		<p><a href="/records/add">入力画面へ戻る</a></p>
@@ -38,4 +55,5 @@
 		</form>
 	</main>
 </body>
+
 </html>
