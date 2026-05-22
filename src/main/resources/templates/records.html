@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>記録入力ページ</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>記録入力ページ</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
+
 <body>
 	<header>
 		<h1>体幹を鍛えよう！</h1>
@@ -40,7 +42,10 @@
 			<button>ENTER!!!</button>
 		</form>
 		<p><a href="/past">過去の記録を見る</a></p>
-		<button type="submit">ログアウト</button>
+		<form action="/logout" method="post">
+			<button type="submit">ログアウト</button>
+		</form>
 	</main>
 </body>
+
 </html>

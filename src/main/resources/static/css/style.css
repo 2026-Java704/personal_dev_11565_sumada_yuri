@@ -62,7 +62,7 @@ button:hover {
 	background-color: #f1b2b2;
 }
 /* エラーメッセージ */
-ul.error {
+error {
 	color: red;
 	list-style: none;
 	padding-left: 0;
