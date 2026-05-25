@@ -9,12 +9,10 @@
 
 <body>
 	<header>
-		<h1>体幹を鍛えよう！</h1>
+		<h1><span class="glitch" data-text="自宅で体幹を鍛えよう！">自宅で体幹を鍛えよう！</span></h1>
 	</header>
 	<main>
-		<hr>
-		<h2>新規登録フォーム</h2>
-
+		<div class = aaa>
 		<h3>お客様情報</h3>
 		<form action="/users/add" method="post">
 			<div th:if="${errorList}">
@@ -33,9 +31,7 @@
 			<button type="submit">新規登録</button>
 		</form>
 		<p><a href="/login">ログイン画面へ戻る</a></p>
+		</div>
 	</main>
-	<hr>
-	<footer th:replace="footer"></footer>
 </body>
-
 </html>

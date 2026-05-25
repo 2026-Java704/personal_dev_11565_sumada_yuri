@@ -9,12 +9,12 @@
 
 <body>
 	<header>
-		<h1>体幹を鍛えよう！</h1>
+		<h1><span class="glitch" data-text="自宅で体幹を鍛えよう！">自宅で体幹を鍛えよう！</span></h1>
 		<span th:text="${@account.name}+' さんがログイン中'"></span>
 		<a href="/logout">ログアウト</a>
 	</header>
 	<main>
-		<hr>
+		<div class = iii>
 		<form th:action="@{/past/{pastId}/edit(pastId=${exercise_records.id})}" method="post">
 			<table border="1">
 				<tr>
@@ -49,7 +49,7 @@
 			<br>
 			<button type="submit">更新する</button>
 		</form>
+		</div>
 	</main>
 </body>
-
 </html>

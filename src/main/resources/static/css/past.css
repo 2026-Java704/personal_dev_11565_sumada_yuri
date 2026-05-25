@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+/* 全体 */
+body {
+	text-align: center; /* 中央寄せ */
+	min-width: 900px; /* 最小幅 */
+	background-color: #f4f4ff; /* 背景色 */
+}
+
+/* ヘッダー*/
+header {
+	background-color: #8ec6ff; /* 背景色 */
+	color: #ffffff; /* 文字色 */
+	padding-top: 5px; /* 内側余白(上) */
+	padding-bottom: 5px; /* 内側余白(下) */
+	background: radial-gradient(circle at center, rgba(102, 126, 234, 1) 0%, rgba(137, 196, 255, 1) 100%, rgba(121, 163, 245, 1) 100%);
+}
+
+/* ヘッダー内見出し */
+header h1 {
+	color: #ffffff;
+	font-size: 20pt;
+	margin: 10px auto;
+}
+
+/* メイン */
+main {
+	height: 50px;
+	padding: 20px;
+}
+
+/* 表線 */
+table,
+th,
+td {
+	border-collapse: collapse;
+	border: 1px solid #7d8bae;
+
+}
+
+/* 表 */
+table {
+	margin: 5px auto;
+	min-width: 800px;
+}
+
+/* 表見出しセル */
+table th {
+	background: #8ec6ff;
+	color: #ffffff;
+	padding: 8px 15px;
+}
+
+/* 更新ボタン */
+.update {
+	background-color: #7f7fff; /* 背景色 */
+	 color: #ffffff;             /* 文字色 */
+	 padding: 12px 24px;         /* 余白 */
+	 border: none;               /* 枠線なし */
+	 border-radius: 4px;         /* 角丸 */
+	 font-size: 16px;            /* フォントサイズ */
+	 cursor: pointer;            /* マウスポインターを指の形にする */
+	 transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+/* 更新ボタン(マウスオーバー時) */
+.update:hover {
+	background-color: #9999ff;
+}
+
+/* 削除ボタン */
+.delete {
+	background-color: #ff7f7f; /* 背景色 */
+	 color: #ffffff;             /* 文字色 */
+	 padding: 12px 24px;         /* 余白 */
+	 border: none;               /* 枠線なし */
+	 border-radius: 4px;         /* 角丸 */
+	 font-size: 16px;            /* フォントサイズ */
+	 cursor: pointer;            /* マウスポインターを指の形にする */
+	 transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+/* 削除ボタン(マウスオーバー時) */
+.delete:hover {
+	background-color: #ff9999;
+}
+
+/* 送信ボタン */
+button {
+	margin: 2px;
+	padding: 5px 20px;
+	background-color: #e5857b;
+	color: #ffffff;
+	border: none;
+	width: 150px;
+	cursor: pointer;
+}
+
+/* 送信ボタン(マウスオーバー時) */
+button:hover {
+	background-color: #f1b2b2;
+}
+
+/* エラーメッセージ */
+error {
+	color: red;
+	list-style: none;
+	padding-left: 0;
+}
+.aaa {
+	padding-top: 10%
+}
+.iii {
+	padding-top: 5%
+}

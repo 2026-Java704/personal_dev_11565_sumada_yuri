@@ -1,52 +1,100 @@
 @charset "UTF-8";
+
 /* 全体 */
 body {
-	background-color: #EFF0F7; /* 背景色  */
 	text-align: center; /* 中央寄せ */
-    min-width: 900px; /* 最小幅 */
-}
-/* ヘッダー、ナビゲーションメニュー、フッター */
-header, nav, footer {
-	background-color: black; /* 背景色 */
-	color:white; /* 文字色 */
-	padding-top: 5px; /* 内側余白(上) */
-	padding-bottom: 5px; /* 内側余白(下) */
-}
-/* ヘッダー、ナビゲーション内リンク */
-header a, nav a {
-	color: #ffffff;
-}
-/* ヘッダー内見出し */
-header h1 {
-	font-size: 25pt;
-	margin: 10px auto;
+	min-width: 900px; /* 最小幅 */
+	background-color: #f4f4ff; /* 背景色 */
 }
 
-/* 仕切り線 */
-hr {
-	border-top: 2px dashed #7d8bae;
+/* ヘッダー*/
+header {
+	background-color: #89c4ff; /* 背景色 */
+	color: #ffffff; /* 文字色 */
+	padding-top: 5px; /* 内側余白(上) */
+	padding-bottom: 5px; /* 内側余白(下) */
+background: radial-gradient(circle at center, rgba(102, 126, 234, 1) 0%, rgba(137, 196, 255, 1) 100%, rgba(121, 163, 245, 1) 100%);}
+
+/* ヘッダー内見出し */
+header h1 {
+	color: #ffffff;
+	font-size: 20pt;
+	margin: 10px auto;
 }
+.glitch {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  color: #ff00ff;
+  animation: glitchTop 0.5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch::after {
+  color: #00ffff;
+  animation: glitchBottom 0.7s infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchTop {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+@keyframes glitchBottom {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(5px); }
+  40% { transform: translateX(-5px); }
+  60% { transform: translateX(3px); }
+  80% { transform: translateX(-3px); }
+}
+
 /* メイン */
 main {
-	background-color: #FFFFFF;
-	min-height: 50px;
+	height: 50px;
 	padding: 20px;
 }
+
 /* 表線 */
-table, th, td {
+table,
+th,
+td {
 	border-collapse: collapse;
 	border: 1px solid #7d8bae;
+
 }
+
 /* 表 */
 table {
-    margin: 5px auto;
-    min-width: 800px;
+	margin: 5px auto;
+	min-width: 800px;
 }
+
 /* 表見出しセル */
 table th {
-	background: #7d8bae;
+	background: #8ec6ff;
 	color: #ffffff;
+	padding: 8px 15px;
 }
+
 /* 送信ボタン */
 button {
 	margin: 2px;
@@ -54,16 +102,24 @@ button {
 	background-color: #e5857b;
 	color: #ffffff;
 	border: none;
-	width:150px;
+	width: 150px;
 	cursor: pointer;
 }
+
 /* 送信ボタン(マウスオーバー時) */
 button:hover {
 	background-color: #f1b2b2;
 }
+
 /* エラーメッセージ */
 error {
 	color: red;
 	list-style: none;
 	padding-left: 0;
+}
+.aaa {
+	padding-top: 10%
+}
+.iii {
+	padding-top: 5%
 }

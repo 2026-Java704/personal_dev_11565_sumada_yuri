@@ -9,18 +9,20 @@
 
 <body>
 	<header>
-		<h1>体幹を鍛えよう！</h1>
+		<h1><span class="glitch" data-text="自宅で体幹を鍛えよう！">自宅で体幹を鍛えよう！</span></h1>
 	</header>
 	<main>
-		<hr>
+		<div class = aaa>
+		<h3>名前とパスワードをご入力の上、「ログイン」ボタンをクリックしてください。</h3>
 		<form action="/login" method="post">
 			<input type="text" name="name" placeholder="名前" th:value="${name}"><br>
 			<input type="text" name="password" placeholder="パスワード"><br>
-			<button>ログイン</button>
+			<button>ログイン</button><br>
+			</div>
 			<br> <span th:text="${message}"></span>
 		</form>
 		<a href="/users/new" method="get">新規会員登録</a>
+		</div>
 	</main>
 </body>
-
 </html>
