@@ -16,7 +16,7 @@
 		<h3>名前とパスワードをご入力の上、「ログイン」ボタンをクリックしてください。</h3>
 		<form action="/login" method="post">
 			<input type="text" name="name" placeholder="名前" th:value="${name}"><br>
-			<input type="text" name="password" placeholder="パスワード"><br>
+			<input type="password" name="password" placeholder="パスワード"><br>
 			<button>ログイン</button><br>
 			</div>
 			<br> <span th:text="${message}"></span>
